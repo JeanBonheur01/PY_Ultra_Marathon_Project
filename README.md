@@ -44,12 +44,13 @@ Final step: exporting the clean data for analytics questions.
 ```py
 ax= sns.histplot(df4['race_distance'])
 ax.set_title("Distribution of Race Distances")
-````
+```
 
 <img width="1440" alt="distrib_distance" src="https://github.com/JeanBonheur01/PY_Ultra_Marathon_Project/assets/131664311/db646302-11c2-415f-aaf6-3db370affd93">
 
 2. What is the distribution of race distances by gender?
 ```py
+
 ax = sns.histplot(df4, x = 'race_distance', hue = 'gender')
 ax.set_title("Distribution of Race Distance by Gender")
 ```
@@ -58,6 +59,7 @@ ax.set_title("Distribution of Race Distance by Gender")
 
 3. What is the distribution of average speed for 50-mile races?
 ```py
+
 ax = sns.displot(df4[df4['race_distance'] == '50mi']['average_speed'])
 plt.title("Distribution of Average Speed for 50-Mile Races")
 ```
@@ -66,6 +68,7 @@ plt.title("Distribution of Average Speed for 50-Mile Races")
 
 4. What is the distribution of average speed for 50km races?
 ```py
+
 ax = sns.displot(df4[df4['race_distance'] == '50km']['average_speed'])
 plt.title("Distribution of Average Speed for 50km Races")
 ```
@@ -74,6 +77,7 @@ plt.title("Distribution of Average Speed for 50km Races")
 
 5. What is the distribution of average speed by race distance and gender?
 ```py
+
 sns.violinplot(data= df4, x = 'race_distance', y= 'average_speed', hue = 'gender')
 plt.title("Distribution of Average Speed by Race Distance and Gender")
 ```
@@ -81,6 +85,7 @@ plt.title("Distribution of Average Speed by Race Distance and Gender")
 <img width="1440" alt="violinplot_avg" src="https://github.com/JeanBonheur01/PY_Ultra_Marathon_Project/assets/131664311/0fd3b415-ac2d-4c02-aa4b-d778a417aa5b">
 
 ```py
+
 sns.violinplot(data= df4, x = 'race_distance', y= 'average_speed', hue = 'gender', split = True, inner = 'quart', linewidth=1)
 plt.title("Distribution of Average Speed by Race Distance and Gender (Split Violin)")
 ```
@@ -89,6 +94,7 @@ plt.title("Distribution of Average Speed by Race Distance and Gender (Split Viol
 
 6. How does the average speed vary with age for different genders?
 ```py
+
 sns.lmplot(data=df4, x= 'age', y= 'average_speed', hue= 'gender')
 plt.title("Relationship Between Age and Average Speed, by Gender")
 ```
@@ -97,21 +103,25 @@ plt.title("Relationship Between Age and Average Speed, by Gender")
 
 7. What was the difference in speed between males and females for the 50Km and 50mi races?
 ```py
+
 df4.groupby(['race_distance', 'gender'])['average_speed'].mean()
 ```
 
 8. Which age group runs faster and which runs slower in the 50-mile races?
 - Faster runners (Descending raking)
 ```py
+
 df4.query('race_distance == "50mi"').groupby('age') ['average_speed'].agg (['mean', 'count']).sort_values('mean', ascending = False).query('count>19')
 ```
 
 - Slower runners (Ascending ranking)
 ```py
+
 df4.query('race_distance == "50mi"').groupby('age') ['average_speed'].agg (['mean', 'count']).sort_values('mean', ascending = True).query('count>19')
 ```
 9. In which seasons do the athletes have higher performance?
 ```py
+
 df4['race_month']= df4['race_date'].str.split('.').str.get(1).astype(int)
 
 df4['race_season'] = df4['race_month'].apply(lambda x: 'Winter' if x > 11 else 'Fall' if x > 8 else 'Summer' if x > 5 else 'Sprint' if x >2 else 'Winter')
