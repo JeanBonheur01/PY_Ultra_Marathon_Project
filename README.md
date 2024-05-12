@@ -168,6 +168,37 @@ df4.query('race_distance == "50mi"').groupby('race_season')['average_speed'].agg
 9. In general athletes perform better and faster in the spring, followed by winter and fall. However, their performance is lower in the summer when it is warmer. But for 50-mile races, summer still remains the season where athletes perform the lowest, but the ranking has changed for other seasons. Fall has the highest performance rate, followed by spring and winter.
     
 ### Recommendations
+
+Based on the findings of the race data, here comes some recommendations: 
+
+#### 1. Promote 50-Mile Races
+
+Since more athlets participate in the 50Km race compared to the 50mi race, it is important to consider implementing targeted marketing strategies to increase participation in the 50-mile races. Highlight the unique challenges and rewards of longer distances to attract more participants. 
+
+#### 2. Gender Diversity Initiatives
+
+Given the gender disparity in participation between the 50Km and 50mi races, consider implementing initiatives to encourage more female participation in longer-distance races. This could include targeted outreach, women-specific training programs, or events aimed at fostering a supportive and inclusive environment for female athletes. 
+
+#### 3. Speed Training Programs
+
+Develop training programs tailored to athlets aiming for average speeds between 6 and 8 in both race types. Provide resources, coaching, and support to help athlets improve their speed and performance within this range. 
+
+#### 4. Age-Specific Training
+
+Recognize the age-related trends in performance and tailor training programs to accommodate the varying needs of athlets across different age groups. Consider offering age-specific coaching or training sessions to optimize performance and reduce the risk of injury. 
+
+#### 5. Seasonal Considerations
+
+Acknowledge the impact of seasonal variation on the athlete performance and race outcomes. Provide guidance and resources for athletes to adapt their training and race strategies accordingly, particularly during warmer months when performance tends to decrease. 
+
+#### 6. Further Analysis
+
+It is critical to conduct more in-depth statistical analyses to explore the differences in performance between race types and genders. Investigate factors such as training regims, race conditions, and athlets demographics to better understand the underlying reasons for these differences. 
+
+By implementing these recommendations, race organizers, trainers, etc can enhance the overall experience for participants, promote inclusivity and diversity, and optimize performance outcomes for athletes across different race distances, genders, ages, and seasons. 
+
 ### Conclusion
+
+This analysis project has not only provided insights into participant statistics and performance across various race distances and demographic factors but has also identified potential areas for improvement. By applying the recommendations and continuing to be data-driven, organizers can create a more inclusive and rewarding experience for all participants, contributing to positive evolution of the running community. 
 
 💻🖱️💻🤖🖱️🤖💻
